@@ -6,7 +6,7 @@ import Empty from "../simple comps/Empty";
 function Content(props) {
   const { client } = useContext(GlobalAPI);
   return (
-    <div>
+    <>
       {client.length === 0 ? (
         <Empty />
       ) : (
@@ -20,7 +20,7 @@ function Content(props) {
           />
         ))
       )}
-    </div>
+    </>
   );
 }
 

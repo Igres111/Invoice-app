@@ -13,7 +13,7 @@ export const GlobalAPI = createContext<TContext>({
 });
 
 function MainContext() {
-  const [client, setClient] = useState<TDataArray>([]);
+  const [client, setClient] = useState<TDataArray>(data);
   console.log(client);
 
   return (
