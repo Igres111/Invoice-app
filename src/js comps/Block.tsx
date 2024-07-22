@@ -31,7 +31,7 @@ function Block({ id, due, total, clientName, status }: TBlock) {
   return (
     <Link
       to={`/${id}`}
-      className="w-[327px] h-[134px] ml-[24px] mt-8 flex justify-between items-center bg-[#FFFFFF] rounded-lg	"
+      className="w-[327px] h-[134px]  mt-8 flex justify-between items-center bg-[#FFFFFF] rounded-lg	"
     >
       <div className="flex flex-col items-start ml-6">
         <p className="text-[#0C0E16] font-bold mt-6 mb-6">#{id}</p>

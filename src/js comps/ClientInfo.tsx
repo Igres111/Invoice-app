@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { GlobalAPI } from "../logic/MainContext";
+import img from "/assets/icon-arrow-left.svg";
 import Info from "./Info";
 
 function ClientInfo() {
@@ -8,8 +9,11 @@ function ClientInfo() {
   const { client } = useContext(GlobalAPI);
   console.log(client.filter((el) => el.id === id));
   return (
-    <div>
-      <Link to={"/"}>Go Back</Link>
+    <div className="ml-6">
+      <Link className="mt-[33px] flex" to={"/"}>
+        <img src={img}></img>
+        <span className="ml-6 font-bold	"> Go Back</span>
+      </Link>
 
       {client
         .filter((el) => el.id === id)

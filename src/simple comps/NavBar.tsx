@@ -9,7 +9,7 @@ function NavBar() {
       </div>
       <div className="flex  justify-center items-center">
         <img src={moon} />
-        <div className="w-[68px]  border-l border-[#494E6E] ml-[24px] pl-[24px] ">
+        <div className="w-[68px]  border-l border-[#494E6E] ml-[24px]  ">
           <img className="w-8 h-8 rounded-[32px]" src={profile}></img>
         </div>
       </div>
