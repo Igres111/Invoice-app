@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 function Layout(props) {
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen w-screen ">
       <NavBar />
       <Outlet />
     </div>

@@ -6,12 +6,13 @@ import Empty from "../simple comps/Empty";
 function Content(props) {
   const { client } = useContext(GlobalAPI);
   return (
-    <>
+    <div className="flex flex-col items-center ">
       {client.length === 0 ? (
         <Empty />
       ) : (
         client.map((el) => (
           <Block
+            key={el.id}
             status={el.status}
             id={el.id}
             due={el.paymentDue}
@@ -20,7 +21,7 @@ function Content(props) {
           />
         ))
       )}
-    </>
+    </div>
   );
 }
 

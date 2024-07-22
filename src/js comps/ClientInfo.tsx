@@ -14,7 +14,7 @@ function ClientInfo() {
       {client
         .filter((el) => el.id === id)
         .map((el) => (
-          <Info client={el} />
+          <Info key={el.id} client={el} />
         ))}
     </div>
   );
