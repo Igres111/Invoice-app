@@ -8,8 +8,8 @@ function ClientInfo() {
   const { id } = useParams();
   const { client } = useContext(GlobalAPI);
   return (
-    <div className="ml-6">
-      <Link className="mt-[33px] flex" to={"/"}>
+    <div>
+      <Link className="mt-[33px] flex pl-6" to={"/"}>
         <img src={img}></img>
         <span className="ml-6 font-bold	"> Go Back</span>
       </Link>
