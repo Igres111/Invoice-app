@@ -1,6 +1,11 @@
-import React from "react";
+type TCheckout = {
+  name: string;
+  quantity: number;
+  price: number;
+  total: number;
+};
 
-function Checkout({ name, quantity, price, total }) {
+function Checkout({ name, quantity, price, total }: TCheckout) {
   return (
     <div className="flex justify-around leading-4	">
       <div>

@@ -1,4 +1,5 @@
 import Checkout from "./Checkout";
+import InfoButtons from "./InfoButtons";
 
 type TClient = {
   client: TData;
@@ -135,6 +136,7 @@ function Info({ client }: TClient) {
           </div>
         </div>
       </div>
+      <InfoButtons id={client.id} />
     </div>
   );
 }
