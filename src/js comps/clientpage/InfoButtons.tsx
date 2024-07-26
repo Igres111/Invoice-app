@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { GlobalAPI } from "../logic/MainContext";
+
 import { Link } from "react-router-dom";
+import { GlobalAPI } from "../../logic/MainContext";
 
 function InfoButtons({ id }: string) {
   const { markAsPaid } = useContext(GlobalAPI);

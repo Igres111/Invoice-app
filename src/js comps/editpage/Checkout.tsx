@@ -11,10 +11,10 @@ function Checkout({ name, quantity, price, total }: TCheckout) {
       <div>
         <p className="font-bold mb-2">{name}</p>
         <p className="mb-6 text-[#7E88C3]">
-          {quantity} x £ {price.toFixed(2)}
+          {quantity} x £ {price}
         </p>
       </div>
-      <p className="font-bold mt-3">£ {total.toFixed(2)}</p>
+      <p className="font-bold mt-3">£ {total}</p>
     </div>
   );
 }

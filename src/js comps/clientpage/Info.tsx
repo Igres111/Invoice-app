@@ -1,4 +1,7 @@
-import Checkout from "./Checkout";
+// import Checkout from "./Checkout";
+// import InfoButtons from "./InfoButtons";
+
+import Checkout from "../editpage/Checkout";
 import InfoButtons from "./InfoButtons";
 
 type TClient = {
@@ -29,11 +32,6 @@ function Info({ client }: TClient) {
   const monthDue = Number(new Date(client.paymentDue).getMonth());
   const yearDue = new Date(client.paymentDue).getFullYear();
 
-  function handleUpperCase() {
-    const arr = client.status.split("");
-    arr[0] = arr[0].toUpperCase();
-    return arr.join("");
-  }
   return (
     <div>
       <div className="flex w-[327px] h-[91px] justify-around items-center bg-white mt-[31px] pl-3 ">
@@ -76,7 +74,7 @@ function Info({ client }: TClient) {
                 : "text-[#373B53]"
             }	`}
           >
-            {handleUpperCase()}
+            {client.status.name}
           </p>
         </div>
       </div>
@@ -132,7 +130,7 @@ function Info({ client }: TClient) {
           ))}
           <div className="flex h-[80px] justify-around items-center bg-[#373B53] rounded-b-lg text-white">
             <p className="text-[13px]">Grand Total</p>
-            <p className="text-6 font-bold">£ {client.total.toFixed(2)}</p>
+            <p className="text-6 font-bold">£ {client.total}</p>
           </div>
         </div>
       </div>

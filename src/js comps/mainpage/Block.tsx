@@ -27,11 +27,6 @@ function Block({ id, due, total, clientName, status }: TBlock) {
   const month = Number(new Date(due).getMonth());
   const year = new Date(due).getFullYear();
 
-  function handleUpperCase() {
-    const arr = status.split("");
-    arr[0] = arr[0].toUpperCase();
-    return arr.join("");
-  }
   return (
     <Link
       to={`/${id}`}
@@ -87,7 +82,7 @@ function Block({ id, due, total, clientName, status }: TBlock) {
                 : "text-[#373B53]"
             }	`}
           >
-            {handleUpperCase()}
+            {status}
           </p>
         </div>
       </div>
