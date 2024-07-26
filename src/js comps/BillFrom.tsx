@@ -1,7 +1,9 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, useFieldArray } from "react-hook-form";
 import * as yup from "yup";
 import { Inputs } from "../types/billForm";
+import Cart from "./Cart";
+import { useEffect } from "react";
 const style_inputs =
   "rounded font-bold border border-[#DFE3FA] border-solid pl-5 h-12 mt-2";
 const style_text = "text-[#7E88C3] text-[13px]";
@@ -25,7 +27,7 @@ function BillFrom() {
     clientEmail: yup.string().required("Email is required"),
     createdAt: yup
       .date()
-      .required("Dates are required")
+      .typeError("Dates are required")
       .min(new Date(), "Invalid date"),
     description: yup.string(),
     paymentTerms: yup.string().required(),
@@ -34,13 +36,26 @@ function BillFrom() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
+    control,
   } = useForm<Inputs>({
     resolver: yupResolver(schema),
+    defaultValues: { items: [] },
   });
+
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
+  const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
+    {
+      control, // control props comes from useForm (optional: if you are using FormProvider)
+      name: "items", // unique name for your Field Array
+    }
+  );
+  console.log(fields);
+
+  useEffect(() => {
+    append(0);
+  }, []);
   return (
     <form className="mt-[22px] font-medium" onSubmit={handleSubmit(onSubmit)}>
       <p className="text-[#7C5DFA] ">Bill From</p>
@@ -178,6 +193,19 @@ function BillFrom() {
           className={`w-[327px] ${style_inputs}`}
           {...register("description")}
         />
+      </div>
+      <div>
+        {fields.map((field, index) => (
+          <Cart
+            key={field.id}
+            style_inputs={style_inputs}
+            register={register}
+            index={index}
+            append={append}
+            fields={fields}
+            {...register(`items.${index}.value` as const)}
+          />
+        ))}
       </div>
       <button type="submit">Submit</button>
     </form>
