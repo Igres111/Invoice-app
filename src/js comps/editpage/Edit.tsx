@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import img from "/assets/icon-arrow-left.svg";
 import BillFrom from "../BillFrom";
-import BillTo from "../BillTo";
 
 function Edit() {
   return (
@@ -12,7 +11,6 @@ function Edit() {
       </Link>
       <h1 className="font-bold text-6 text-2xl mt-[26px]">Edit //ID</h1>
       <BillFrom />
-      <BillTo />
     </div>
   );
 }

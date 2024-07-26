@@ -1,8 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import img from "/assets/icon-arrow-left.svg";
 import BillFrom from "../BillFrom";
-import BillTo from "../BillTo";
 
 function New() {
   return (
@@ -13,7 +11,6 @@ function New() {
       </Link>
       <h1 className="text-2xl font-bold mt-[26px]">New Invoice</h1>
       <BillFrom />
-      <BillTo />
     </div>
   );
 }
